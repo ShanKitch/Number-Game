@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='gamestyle.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+    <title>Great Number Game</title>
+</head>
+<body style="background:radial-gradient(circle,#d9d9d9,#bfbfbf,#8c8c8c); font-family:'Aldrich';">
+    <div class="col-md-8 col-md-offset-4">
+        <h1> Welcome to the Great Number Game!</h1>
+        <h2> I am thinking of a number between 1 and 100...</h2>
+        <h2> Take a guess!</h2>
+        <div class="message" style="margin-left:400px;">
+           {% if session['answer'] == 1 %}
+                <div id="true">
+                    <h3 style="margin-top:100px;">{{session['guess']}} is the Number!</h3>
+                    <a href="/playagain"><button id="playagain" class="btn" type="submit">Play Again</button></a>
+                </div>
+            {% elif session['answer'] == 2 %}
+                <div id="false">
+                    <h3 style="margin-top:100px;">{{session['guess']}} Is Too Low!</h3>
+                </div>
+            {% elif session['answer'] == 3 %}
+                <div id="false">
+                    <h3 style="margin-top:100px;">{{session['guess']}} Is Too High!</h3>
+                </div>
+            {% endif %}
+        </div>
+        <form action="/guess" method='POST'>
+            <input type="number" name="guess">
+            <br>
+            <input type="submit"  id= "submit" name="" value="Submit">
+        </form>
+        <form action="/reset" method='GET'>
+            <input type="submit"  id="reset" name="" value="Reset">
+        </form>
+        
+    </div>
+</body>
+</html>

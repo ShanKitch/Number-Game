@@ -1,0 +1,51 @@
+body{
+    font-family:'Aldrich'
+}
+form{
+    display:inline-block;  
+}
+
+.col-md-8.col-md-offset-4{
+    text-align: center;
+    margin-left:290px;
+    margin-top:100px;
+}
+
+#true ,#false {
+    height: 350px;
+    width:350px;
+    padding-top: 50px;
+    margin: 35px;
+    border: 1px solid black;
+}
+#true {
+    background-color:green;
+   
+}
+
+#false{
+    background-color:red;
+}
+
+.h3,h3{
+  margin-top:100px;  
+  font-weight:bold;
+}
+
+input#submit{
+    margin-left:-60px;
+}
+
+input#reset{
+    margin-left:-110px;
+}
+
+input#submit, input#reset{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+button#playagain.btn{
+    color:black;
+    border:1px solid black;
+}
